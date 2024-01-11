@@ -3,7 +3,9 @@ from tkinter import *
 root = Tk()
 # you can name the title of ur app by this function
 root.title('simple calculator')
+# entry is input box at top of the app
 e = Entry(root, width=35, borderwidth=5)
+# fix its position by grid func
 e.grid(row=0, column=0, columnspan=3, padx= 10,pady=10)
 
 def button_click(number):
@@ -28,7 +30,6 @@ def button_add():
 
 def button_multiply():
     first_number = e.get()
-      # global variable can be used outside of function
     global first_numb
     global math 
     math = 'multiply'
@@ -74,7 +75,7 @@ def button_equal():
 
 
 # DEFINE BUTTONS
-    
+ # use lambda cuz in command= u can't add () after function   
 button_1 = Button(root, text='1', padx=40, pady=20, command=lambda: button_click(1))
 button_2 = Button(root, text='2', padx=40, pady=20, command=lambda: button_click(2))
 button_3 = Button(root, text='3', padx=40, pady=20, command=lambda: button_click(3))
